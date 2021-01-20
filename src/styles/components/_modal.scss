@@ -1,15 +1,14 @@
 .modal-wrapper {
   border-radius: 12px;
-
   background: white;
   position: absolute;
   padding: 1.3rem;
-
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -70%);
+  transform: translate(-50%, -50%);
   z-index: 99;
 }
+
 .bg {
   z-index: 98;
   position: absolute;
@@ -66,13 +65,16 @@
     color: black;
     border: 1px solid rgba(0, 0, 0, 0.2);
   }
+  button:last-of-type {
+    color: white;
+  }
 }
 
 .banner-settings {
   margin: 2rem 0;
 
   p {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
 }
 

@@ -3,8 +3,11 @@ import { NotesContext } from "../contexts/NoteContext";
 import AddIcon from "@material-ui/icons/Add";
 import Fab from "@material-ui/core/Fab";
 import Zoom from "@material-ui/core/Zoom";
+import { ThemeContext } from "../contexts/ThemeContext";
 
 const CreateArea = () => {
+  const { theme } = useContext(ThemeContext);
+
   const {
     title,
     setTitle,
@@ -37,7 +40,7 @@ const CreateArea = () => {
           onChange={(e) => setContent(e.target.value)}
         />
         <Zoom in={isClicked}>
-          <Fab type="submit">
+          <Fab type="submit" style={{ backgroundColor: theme }}>
             <AddIcon />
           </Fab>
         </Zoom>

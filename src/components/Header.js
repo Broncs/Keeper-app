@@ -4,12 +4,14 @@ import Settings from "./Settings";
 import { useContext } from "react";
 import { NotesContext } from "../contexts/NoteContext";
 import Modal from "../components/Modal";
+import { ThemeContext } from "../contexts/ThemeContext";
 
 const Header = () => {
   const { isModalOpen } = useContext(NotesContext);
+  const { theme } = useContext(ThemeContext);
 
   return (
-    <header>
+    <header style={{ background: theme }}>
       <h1>
         <HighlightIcon />
         Keeper
