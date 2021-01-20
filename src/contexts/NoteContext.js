@@ -1,28 +1,30 @@
 import { createContext, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import useLocalStorage from "../components/useLocalStorage";
 
 export const NotesContext = createContext();
 
 export const NotesContextProvider = ({ children }) => {
-  const [notes, setNotes] = useState([
-    { key: 1, title: "this is a title", content: "this is a content" },
-  ]);
+  const [notes, setNotes] = useLocalStorage([], "notes");
 
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+  const [isClicked, setIsClikcked] = useState(false);
 
   // handle Form submit===========
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    setNotes([...notes, { key: uuidv4(), title, content }]);
+    setNotes((prevValue) => [...prevValue, { key: uuidv4(), title, content }]);
     setTitle("");
     setContent("");
   };
 
   // Delete Note ======
   const deleteNote = (id) => {
-    setNotes(notes.filter(({ key }) => key !== id));
+    setNotes((prevNotes) => {
+      return prevNotes.filter(({ key }) => key !== id);
+    });
   };
 
   return (
@@ -35,6 +37,8 @@ export const NotesContextProvider = ({ children }) => {
         setContent,
         handleSubmit,
         deleteNote,
+        isClicked,
+        setIsClikcked,
       }}
     >
       {children}

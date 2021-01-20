@@ -7,8 +7,8 @@ import { NotesContextProvider } from "./contexts/NoteContext";
 function App() {
   return (
     <NotesContextProvider>
+      <Header />
       <div className="App">
-        <Header />
         <CreateArea />
         <Note />
         <Footer />
