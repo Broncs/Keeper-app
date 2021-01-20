@@ -1,15 +1,18 @@
 import { useRef, useEffect } from "react";
 import { useContext } from "react";
 import { NotesContext } from "../contexts/NoteContext";
+import CloseIcon from "@material-ui/icons/Close";
 
 const Modal = () => {
-  const { isModalOpen, setIsModalOpen } = useContext(NotesContext);
+  const { closeModalHandler } = useContext(NotesContext);
 
   return (
-    <div className="bg">
+    <>
+      <div className="bg"></div>
       <div className="modal-wrapper">
         <form className="form-modal">
           <h2>selecionar tema</h2>
+          <CloseIcon onClick={closeModalHandler} className="close-modal" />
           <div className="color-container">
             <div
               className="themeColor"
@@ -48,13 +51,25 @@ const Modal = () => {
               style={{ background: "rgb(214, 158, 46)" }}
             ></div>
           </div>
+          <div className="banner-settings">
+            <p>
+              Banner Link <span>(opcional)</span>
+            </p>
+            <div className="imgContainer">
+              <input
+                type="text"
+                placeholder="ex: https://picsum.photos/1200/400?random=2"
+              />
+              <button type="text">Remover imagem</button>
+            </div>
+          </div>
           <div className="button-container">
             <button>cancelar</button>
             <button>Salvar</button>
           </div>
         </form>
       </div>
-    </div>
+    </>
   );
 };
 

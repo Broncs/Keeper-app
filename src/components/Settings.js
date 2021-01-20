@@ -3,9 +3,9 @@ import { useContext } from "react";
 import { NotesContext } from "../contexts/NoteContext";
 
 const Settings = () => {
-  const { isModalOpen, setIsModalOpen } = useContext(NotesContext);
+  const { openModalHandler } = useContext(NotesContext);
   return (
-    <div onClick={() => setIsModalOpen(!isModalOpen)} className="settings">
+    <div onClick={openModalHandler} className="settings">
       <SettingsIcon />
       <p>Tema</p>
     </div>

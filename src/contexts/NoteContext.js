@@ -12,6 +12,15 @@ export const NotesContextProvider = ({ children }) => {
   const [isClicked, setIsClikcked] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  // Open Modal ==============
+  const openModalHandler = () => {
+    setIsModalOpen(true);
+  };
+
+  // Close Modal =============
+  const closeModalHandler = () => {
+    setIsModalOpen(false);
+  };
   // handle Form submit===========
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -42,6 +51,8 @@ export const NotesContextProvider = ({ children }) => {
         setIsClikcked,
         isModalOpen,
         setIsModalOpen,
+        openModalHandler,
+        closeModalHandler,
       }}
     >
       {children}
