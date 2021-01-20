@@ -1,0 +1,17 @@
+@import "./components/header";
+@import "./components/footer";
+@import "./components/note";
+@import "./components/createArea";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-family: "Montserrat", sans-serif;
+}
+body {
+  background: #eee;
+  padding: 0 16px;
+}
