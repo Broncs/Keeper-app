@@ -10,6 +10,7 @@ export const NotesContextProvider = ({ children }) => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [isClicked, setIsClikcked] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   // handle Form submit===========
   const handleSubmit = (e) => {
@@ -39,6 +40,8 @@ export const NotesContextProvider = ({ children }) => {
         deleteNote,
         isClicked,
         setIsClikcked,
+        isModalOpen,
+        setIsModalOpen,
       }}
     >
       {children}

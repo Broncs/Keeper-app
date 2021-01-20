@@ -1,0 +1,12 @@
+.modal {
+  width: 400px;
+  height: 300px;
+  border: 1px solid grey;
+  margin: 0 auto;
+  margin-top: 10px;
+  background: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
