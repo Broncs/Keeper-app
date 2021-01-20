@@ -1,15 +1,20 @@
-import React from "react";
+import { useContext } from "react";
+import { NotesContext } from "../contexts/NoteContext";
 
-const Note = ({ notes }) => {
+const Note = () => {
+  const { notes, deleteNote } = useContext(NotesContext);
+
   return (
     <>
-      {notes.map((note) => (
-        <div key={note.key} className="note">
-          <h1>{note.title}</h1>
-          <p>{note.content}</p>
-          <button>DELETE</button>
-        </div>
-      ))}
+      {notes.length > 0
+        ? notes.map((note) => (
+            <div key={note.key} className="note">
+              <h1>{note.title}</h1>
+              <p>{note.content}</p>
+              <button onClick={() => deleteNote(note.key)}>DELETE</button>
+            </div>
+          ))
+        : "sem notas"}
     </>
   );
 };
