@@ -5,11 +5,18 @@ header {
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  min-height: 300px;
 }
 
 header h1 {
   color: #fff;
   font-family: "McLaren", cursive;
   font-weight: 200;
+}
+
+.header-bg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
 }

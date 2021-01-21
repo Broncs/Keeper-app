@@ -5,13 +5,21 @@ import CloseIcon from "@material-ui/icons/Close";
 
 const Modal = () => {
   const { closeModalHandler } = useContext(NotesContext);
-  const { theme, handleThemeColor } = useContext(ThemeContext);
+  const {
+    theme,
+    handleThemeColor,
+    banner,
+    setBanner,
+    handleModalSubmit,
+    removeBanner,
+  } = useContext(ThemeContext);
+  console.log(banner);
 
   return (
     <>
       <div onClick={closeModalHandler} className="bg"></div>
       <div className="modal-wrapper">
-        <form className="form-modal">
+        <form onSubmit={handleModalSubmit} className="form-modal">
           <h2>selecionar tema</h2>
           <CloseIcon onClick={closeModalHandler} className="close-modal" />
           <div className="color-container">
@@ -68,16 +76,24 @@ const Modal = () => {
             <div className="imgContainer">
               <input
                 type="text"
+                value={banner}
+                onChange={(e) => setBanner(e.target.value)}
                 placeholder="ex: https://picsum.photos/1200/400?random=2"
               />
-              <button style={{ backgroundColor: theme }} type="text">
+              <button
+                onClick={removeBanner}
+                style={{ backgroundColor: theme }}
+                type="text"
+              >
                 Remover imagem
               </button>
             </div>
           </div>
           <div className="button-container">
             <button onClick={closeModalHandler}>cancelar</button>
-            <button style={{ backgroundColor: theme }}>Salvar</button>
+            <button type="submit" style={{ backgroundColor: theme }}>
+              Salvar
+            </button>
           </div>
         </form>
       </div>

@@ -8,10 +8,16 @@ import { ThemeContext } from "../contexts/ThemeContext";
 
 const Header = () => {
   const { isModalOpen } = useContext(NotesContext);
-  const { theme } = useContext(ThemeContext);
+  const { theme, banner } = useContext(ThemeContext);
 
   return (
-    <header style={{ background: theme }}>
+    <header
+      className="header-bg"
+      style={{
+        backgroundImage: `url(${banner})`,
+        backgroundColor: theme,
+      }}
+    >
       <h1>
         <HighlightIcon />
         Keeper
