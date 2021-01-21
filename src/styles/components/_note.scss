@@ -9,7 +9,7 @@
   border-radius: 7px;
   box-shadow: 0 2px 5px #ccc;
   padding: 12px;
-  width: 240px;
+  width: 100%;
   margin: 16px;
   // border-top: 4px solid #eb596e;
   // float: left;
@@ -41,5 +41,8 @@
 @media screen and (min-width: 590px) {
   .note-container {
     justify-content: flex-start;
+  }
+  .note {
+    max-width: 240px;
   }
 }
