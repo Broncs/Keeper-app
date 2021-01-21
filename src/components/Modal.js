@@ -2,13 +2,12 @@ import { useContext } from "react";
 import { NotesContext } from "../contexts/NoteContext";
 import { ThemeContext } from "../contexts/ThemeContext";
 import CloseIcon from "@material-ui/icons/Close";
+import { colorData } from "../colorData";
+import ThemeColor from "./ThemeColor";
 
 const Modal = () => {
   const { closeModalHandler } = useContext(NotesContext);
-  const { theme, handleThemeColor, banner, setBanner } = useContext(
-    ThemeContext
-  );
-  console.log(banner);
+  const { theme, banner, setBanner } = useContext(ThemeContext);
 
   // modal submit
 
@@ -25,52 +24,11 @@ const Modal = () => {
           <h2>selecionar tema</h2>
           <CloseIcon onClick={closeModalHandler} className="close-modal" />
           <div className="color-container">
-            <div
-              onClick={handleThemeColor}
-              className="themeColor"
-              style={{ background: "rgb(56, 161, 105)" }}
-            ></div>
-            <div
-              onClick={handleThemeColor}
-              className="themeColor"
-              style={{ background: "rgb(97, 170, 229)" }}
-            ></div>
-            <div
-              onClick={handleThemeColor}
-              className="themeColor"
-              style={{ background: "rgb(128, 90, 213)" }}
-            ></div>
-            <div
-              onClick={handleThemeColor}
-              className="themeColor"
-              style={{ background: "rgb(229, 62, 62) " }}
-            ></div>
-            <div
-              onClick={handleThemeColor}
-              className="themeColor"
-              style={{ background: "rgb(221, 107, 32)" }}
-            ></div>
-            <div
-              onClick={handleThemeColor}
-              className="themeColor"
-              style={{ background: "rgb(90, 103, 216)" }}
-            ></div>
-            <div
-              onClick={handleThemeColor}
-              className="themeColor"
-              style={{ background: "rgb(49, 151, 149)" }}
-            ></div>
-            <div
-              onClick={handleThemeColor}
-              className="themeColor"
-              style={{ background: "rgb(113, 128, 150)" }}
-            ></div>
-            <div
-              onClick={handleThemeColor}
-              className="themeColor"
-              style={{ background: "rgb(214, 158, 46)" }}
-            ></div>
+            {colorData.map((color, index) => {
+              return <ThemeColor key={index} color={color} />;
+            })}
           </div>
+
           <div className="banner-settings">
             <p>
               Link imagem <span>(opcional)</span>
