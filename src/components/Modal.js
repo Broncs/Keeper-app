@@ -5,15 +5,17 @@ import CloseIcon from "@material-ui/icons/Close";
 
 const Modal = () => {
   const { closeModalHandler } = useContext(NotesContext);
-  const {
-    theme,
-    handleThemeColor,
-    banner,
-    setBanner,
-    handleModalSubmit,
-    removeBanner,
-  } = useContext(ThemeContext);
+  const { theme, handleThemeColor, banner, setBanner } = useContext(
+    ThemeContext
+  );
   console.log(banner);
+
+  // modal submit
+
+  const handleModalSubmit = (e) => {
+    e.preventDefault();
+    closeModalHandler();
+  };
 
   return (
     <>
@@ -81,9 +83,9 @@ const Modal = () => {
                 placeholder="ex: https://picsum.photos/1200/400?random=2"
               />
               <button
-                onClick={removeBanner}
+                type="button"
+                onClick={() => setBanner("")}
                 style={{ backgroundColor: theme }}
-                type="text"
               >
                 Remover imagem
               </button>

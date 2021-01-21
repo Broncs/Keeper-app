@@ -4,9 +4,9 @@ import useLocalStorage from "../components/useLocalStorage";
 export const ThemeContext = createContext();
 
 export const ThemeContextProvider = ({ children }) => {
-  const [theme, setTheme] = useState("#f5ba13");
+  const [theme, setTheme] = useLocalStorage("#f5ba13", "theme");
 
-  const [banner, setBanner] = useState("");
+  const [banner, setBanner] = useLocalStorage("", "banner");
 
   const handleThemeColor = (e) => {
     const bg = e.target.getAttribute("style").slice(12, -1);
@@ -14,16 +14,10 @@ export const ThemeContextProvider = ({ children }) => {
     setTheme(bg);
   };
 
-  // modal submit
-
-  const handleModalSubmit = (e) => {
-    e.preventDefault();
-  };
-
-  // remove banner img
-  const removeBanner = () => {
-    setBanner("");
-  };
+  // // remove banner img
+  // const removeBanner = () => {
+  //   setBanner("");
+  // };
 
   return (
     <ThemeContext.Provider
@@ -32,8 +26,6 @@ export const ThemeContextProvider = ({ children }) => {
         theme,
         banner,
         setBanner,
-        handleModalSubmit,
-        removeBanner,
       }}
     >
       {children}
