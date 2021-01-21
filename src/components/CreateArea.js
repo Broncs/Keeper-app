@@ -16,6 +16,7 @@ const CreateArea = () => {
     handleSubmit,
     isClicked,
     setIsClikcked,
+    error,
   } = useContext(NotesContext);
 
   return (
@@ -23,6 +24,7 @@ const CreateArea = () => {
       <form className="create-note" onSubmit={handleSubmit}>
         {isClicked && (
           <input
+            className={error === "title" ? "error" : ""}
             type="text"
             name="title"
             placeholder="Titulo"
@@ -32,6 +34,7 @@ const CreateArea = () => {
         )}
 
         <textarea
+          className={error === "content" ? "error" : ""}
           name="content"
           rows={isClicked ? "3" : "1"}
           placeholder="anotação"

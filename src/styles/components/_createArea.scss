@@ -17,6 +17,10 @@ form.create-note textarea {
   font-family: inherit;
   resize: none;
 }
+form.create-note input.error,
+form.create-note textarea.error {
+  border: 1px solid red;
+}
 form.create-note button {
   position: absolute;
   right: 18px;

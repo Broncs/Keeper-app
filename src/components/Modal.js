@@ -73,7 +73,7 @@ const Modal = () => {
           </div>
           <div className="banner-settings">
             <p>
-              Banner Link <span>(opcional)</span>
+              Link imagem <span>(opcional)</span>
             </p>
             <div className="imgContainer">
               <input

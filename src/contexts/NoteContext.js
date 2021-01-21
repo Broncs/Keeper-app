@@ -11,6 +11,7 @@ export const NotesContextProvider = ({ children }) => {
   const [content, setContent] = useState("");
   const [isClicked, setIsClikcked] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [error, setError] = useState("");
 
   // Open Modal ==============
   const openModalHandler = () => {
@@ -25,9 +26,19 @@ export const NotesContextProvider = ({ children }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // || content === ""
+    if (!title) {
+      setError("title");
+      return;
+    }
+    if (!content) {
+      setError("content");
+      return;
+    }
     setNotes((prevValue) => [...prevValue, { key: uuidv4(), title, content }]);
     setTitle("");
     setContent("");
+    setError(false);
   };
 
   // Delete Note ======
@@ -53,6 +64,7 @@ export const NotesContextProvider = ({ children }) => {
         setIsModalOpen,
         openModalHandler,
         closeModalHandler,
+        error,
       }}
     >
       {children}
