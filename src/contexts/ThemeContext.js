@@ -7,11 +7,12 @@ export const ThemeContextProvider = ({ children }) => {
   const [theme, setTheme] = useLocalStorage("#f5ba13", "theme");
 
   const [banner, setBanner] = useLocalStorage("", "banner");
+  const [active, setActive] = useState(0);
 
-  const handleThemeColor = (color) => {
+  const handleThemeColor = (color, id) => {
     // const bg = e.target.getAttribute("style").slice(12, -1);
     // const bg = color;
-
+    setActive(id);
     setTheme(color);
   };
 
@@ -27,6 +28,7 @@ export const ThemeContextProvider = ({ children }) => {
         theme,
         banner,
         setBanner,
+        active,
       }}
     >
       {children}

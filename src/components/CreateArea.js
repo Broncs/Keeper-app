@@ -37,7 +37,7 @@ const CreateArea = () => {
           className={error === "content" ? "error" : ""}
           name="content"
           rows={isClicked ? "3" : "1"}
-          placeholder="anotação"
+          placeholder="Anotação"
           value={content}
           onClick={() => setIsClikcked(true)}
           onChange={(e) => setContent(e.target.value)}

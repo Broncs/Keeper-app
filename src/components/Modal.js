@@ -25,7 +25,7 @@ const Modal = () => {
           <CloseIcon onClick={closeModalHandler} className="close-modal" />
           <div className="color-container">
             {colorData.map((color, index) => {
-              return <ThemeColor key={index} color={color} />;
+              return <ThemeColor key={index} id={index} color={color} />;
             })}
           </div>
 

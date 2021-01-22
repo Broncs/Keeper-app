@@ -32,6 +32,10 @@
   border-radius: 50%;
   cursor: pointer;
 }
+
+.themeColor.active {
+  border: 1px solid black;
+}
 .form-modal {
   position: relative;
 }
