@@ -6,7 +6,7 @@ const ThemeColor = ({ color }) => {
 
   return (
     <div
-      onClick={handleThemeColor}
+      onClick={() => handleThemeColor(color)}
       className="themeColor"
       style={{ background: color }}
     ></div>

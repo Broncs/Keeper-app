@@ -8,10 +8,11 @@ export const ThemeContextProvider = ({ children }) => {
 
   const [banner, setBanner] = useLocalStorage("", "banner");
 
-  const handleThemeColor = (e) => {
-    const bg = e.target.getAttribute("style").slice(12, -1);
+  const handleThemeColor = (color) => {
+    // const bg = e.target.getAttribute("style").slice(12, -1);
+    // const bg = color;
 
-    setTheme(bg);
+    setTheme(color);
   };
 
   // // remove banner img
