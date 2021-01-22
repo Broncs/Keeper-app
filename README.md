@@ -1,8 +1,16 @@
 # Keeper app
 
-## Available Scripts
+## ℹ️ Sobre o projeto
 
-In the project directory, you can run:
+### Projeto usando React com useContext, para eventos globais , como a troca de temas , em diversos componentes, webApp de anotaçoes , com algumas personalizações da sua preferencia .
+
+✨ Demonstração
+
+Voce pode conferir o resultado aqui : [Link]('blabla')
+
+![image](https://user-images.githubusercontent.com/62390902/105539196-37442600-5cd3-11eb-84e3-f202ff274d8e.png)
+
+![image](https://user-images.githubusercontent.com/62390902/105539266-4b882300-5cd3-11eb-9b8e-999239bcc633.png)
 
 ### `npm start`
 
